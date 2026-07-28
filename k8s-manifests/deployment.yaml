@@ -27,7 +27,7 @@ spec:
               mountPath: /scripts
       containers:
         - name: learningsteps
-          image: <acr-server>/learningsteps:<acr_tag>   # the real SHA from show-tags
+          image: learningsteps2468acr.azurecr.io/learningsteps:9b45f462ea1b241ec80e240839bbb05c966cdbf0  # the real SHA from show-tags
           ports:
             - containerPort: 8000
           envFrom:

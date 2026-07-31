@@ -27,12 +27,14 @@ spec:
               mountPath: /scripts
       containers:
         - name: learningsteps
-          image: learningsteps2468acr.azurecr.io/learningsteps:9b45f462ea1b241ec80e240839bbb05c966cdbf0  # the real SHA from show-tags
+          image: learningsteps2468acr.azurecr.io/learningsteps:c8eecadae6cee0c896ff054f4abe52a0a8ad7be9  # the real SHA from show-tags
           ports:
             - containerPort: 8000
           envFrom:
-            - configMapRef: { name: learningsteps-config }
-            - secretRef:    { name: learningsteps-secrets }
+            - configMapRef:
+                name: learningsteps-config
+            - secretRef: 
+                name: learningsteps-secrets
           resources:
             requests: { cpu: 100m, memory: 128Mi }   # HPA needs requests
             limits:   { cpu: 500m, memory: 256Mi }
